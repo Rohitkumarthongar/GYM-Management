@@ -1,24 +1,301 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "autoname": "format:GM-{MM}-{YYYY}-{member_name}",
  "creation": "2024-02-24 23:33:20.422270",
  "doctype": "DocType",
+ "document_type": "Document",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_fyey"
+  "personal_details_tab",
+  "section_break_fyey",
+  "member_name",
+  "gender",
+  "email",
+  "date_of_birth",
+  "emergency_contact_name",
+  "emergency_contact_number",
+  "column_break_ckzw",
+  "workout_plan",
+  "membership_tenure",
+  "membership_plan",
+  "contact_number",
+  "work_phone_number",
+  "base_tenure_charges",
+  "column_break_fvue",
+  "state",
+  "city",
+  "zip_code",
+  "address",
+  "signature_of_member",
+  "additional_facilities_tab",
+  "section_break_wuiv",
+  "body_building",
+  "weight_loss",
+  "locker",
+  "personal_trainer",
+  "suppliments",
+  "column_break_wbfv",
+  "diet_chart",
+  "steam_bath",
+  "cardio",
+  "zoomba",
+  "crossfit",
+  "amended_from",
+  "section_break_rdzo",
+  "additional_charges",
+  "column_break_wrgp",
+  "total_payable_amount"
  ],
  "fields": [
   {
    "fieldname": "section_break_fyey",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Member Name",
+   "options": "Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "City",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "state",
+   "fieldtype": "Data",
+   "label": "State"
+  },
+  {
+   "fieldname": "zip_code",
+   "fieldtype": "Data",
+   "label": "Zip Code"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date Of Birth",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale\nOther",
+   "reqd": 1
+  },
+  {
+   "fieldname": "work_phone_number",
+   "fieldtype": "Data",
+   "label": "Work Phone Number"
+  },
+  {
+   "fieldname": "emergency_contact_name",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "emergency_contact_number",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_ckzw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_fvue",
+   "fieldtype": "Column Break",
+   "options": "Monthly\nQuarterly\nHalf Yearly\nYearly"
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "depends_on": "eval:doc.membership_tenure==\"Quarterly\"|doc.membership_tenure==\"Half Yearly\"|doc.membership_tenure==\"Yearly\"",
+   "fieldname": "additional_facilities_tab",
+   "fieldtype": "Tab Break",
+   "label": "Additional Facilities"
+  },
+  {
+   "default": "0",
+   "fieldname": "body_building",
+   "fieldtype": "Check",
+   "label": "Body Building"
+  },
+  {
+   "default": "0",
+   "fieldname": "weight_loss",
+   "fieldtype": "Check",
+   "label": "Weight Loss"
+  },
+  {
+   "default": "0",
+   "fieldname": "locker",
+   "fieldtype": "Check",
+   "label": "Locker "
+  },
+  {
+   "default": "0",
+   "fieldname": "personal_trainer",
+   "fieldtype": "Check",
+   "label": "Personal Trainer"
+  },
+  {
+   "default": "0",
+   "fieldname": "suppliments",
+   "fieldtype": "Check",
+   "label": "Suppliments"
+  },
+  {
+   "fieldname": "column_break_wbfv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "diet_chart",
+   "fieldtype": "Check",
+   "label": "Diet Chart"
+  },
+  {
+   "default": "0",
+   "fieldname": "steam_bath",
+   "fieldtype": "Check",
+   "label": "Steam Bath"
+  },
+  {
+   "default": "0",
+   "fieldname": "cardio",
+   "fieldtype": "Check",
+   "label": "Cardio"
+  },
+  {
+   "default": "0",
+   "fieldname": "zoomba",
+   "fieldtype": "Check",
+   "label": "Zoomba"
+  },
+  {
+   "default": "0",
+   "fieldname": "crossfit",
+   "fieldtype": "Check",
+   "label": "Crossfit"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Membership",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "personal_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Personal Details"
+  },
+  {
+   "description": "Some Additional Facility Are Giving By the GYM",
+   "fieldname": "section_break_wuiv",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "membership_plan",
+   "fieldtype": "Data",
+   "hide_seconds": 1,
+   "is_virtual": 1,
+   "label": "Membership Plan",
+   "reqd": 1
+  },
+  {
+   "fieldname": "signature_of_member",
+   "fieldtype": "Signature",
+   "label": "Signature of Member"
+  },
+  {
+   "fieldname": "membership_tenure",
+   "fieldtype": "Select",
+   "hide_seconds": 1,
+   "label": "Membership Tenure",
+   "options": "Monthly\nQuarterly\nHalf Yearly\nYearly",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_rdzo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "default": "INR",
+   "description": "You Need To Pay BASE CHARGES, Once the Membership ID Generate",
+   "fieldname": "base_tenure_charges",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Base Tenure Charges"
+  },
+  {
+   "fieldname": "additional_charges",
+   "fieldtype": "Data",
+   "label": "Additional Charges"
+  },
+  {
+   "fieldname": "column_break_wrgp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_payable_amount",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Total Payable Amount"
+  },
+  {
+   "fieldname": "workout_plan",
+   "fieldtype": "Select",
+   "hide_seconds": 1,
+   "label": "Workout Plan",
+   "options": "Beginner\nIntermediate\nAdvanced",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-02-24 23:33:20.422270",
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Gym Member",
+   "link_fieldname": "member_name"
+  }
+ ],
+ "modified": "2024-02-26 16:45:01.396531",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Membership",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -32,9 +309,24 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
+   "share": 1,
+   "write": 1
   }
  ],
+ "show_name_in_global_search": 1,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "member_name"
 }

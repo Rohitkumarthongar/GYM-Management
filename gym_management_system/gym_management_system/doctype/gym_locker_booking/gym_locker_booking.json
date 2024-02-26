@@ -1,36 +1,34 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-02-24 23:34:11.497873",
+ "creation": "2024-02-26 16:49:50.517806",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "package"
+  "total_locker"
  ],
  "fields": [
   {
-   "fieldname": "package",
-   "fieldtype": "Select",
-   "label": "Package",
-   "options": "Normal Membership\nSilver Membership\nGold Membership\nPlatinum Membership\nDiamond Membership"
+   "fieldname": "total_locker",
+   "fieldtype": "Data",
+   "label": "Total Locker"
   }
  ],
  "index_web_pages_for_search": 1,
+ "issingle": 1,
  "links": [],
- "modified": "2024-02-26 13:05:55.501136",
+ "modified": "2024-02-26 16:50:41.682678",
  "modified_by": "Administrator",
  "module": "Gym Management System",
- "name": "Gym Workout Plan",
+ "name": "Gym Locker Booking",
  "owner": "Administrator",
  "permissions": [
   {
    "create": 1,
    "delete": 1,
    "email": 1,
-   "export": 1,
    "print": 1,
    "read": 1,
-   "report": 1,
    "role": "System Manager",
    "share": 1,
    "write": 1

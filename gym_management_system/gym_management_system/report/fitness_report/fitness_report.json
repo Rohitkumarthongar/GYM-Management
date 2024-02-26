@@ -1,0 +1,51 @@
+{
+ "add_total_row": 1,
+ "columns": [
+  {
+   "fieldname": "weight",
+   "fieldtype": "Check",
+   "label": "Weight",
+   "width": 0
+  },
+  {
+   "fieldname": "activity",
+   "fieldtype": "Check",
+   "label": "Activity",
+   "width": 0
+  }
+ ],
+ "creation": "2024-02-25 13:41:06.185798",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight ",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letterhead": null,
+ "modified": "2024-02-26 17:31:30.861924",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Fitness Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Gym Workout Plan",
+ "report_name": "Fitness Report",
+ "report_type": "Report Builder",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Gym Admin"
+  }
+ ]
+}

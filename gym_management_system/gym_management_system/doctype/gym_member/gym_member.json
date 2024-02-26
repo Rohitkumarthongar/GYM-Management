@@ -1,24 +1,84 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:GM-{member_name}",
  "creation": "2024-02-24 23:33:01.261071",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_a3wg"
+  "member_name",
+  "date_of_joining",
+  "membership_tenure",
+  "column_break_reox",
+  "gym_charges",
+  "allotted_trainer",
+  "allotted_locker_number",
+  "trainer_rating"
  ],
  "fields": [
   {
-   "fieldname": "section_break_a3wg",
-   "fieldtype": "Section Break"
+   "fieldname": "member_name",
+   "fieldtype": "Link",
+   "label": "Member Name",
+   "options": "Gym Membership"
+  },
+  {
+   "fetch_from": "member_name.membership_plan",
+   "fieldname": "membership_tenure",
+   "fieldtype": "Data",
+   "hide_seconds": 1,
+   "is_virtual": 1,
+   "label": "Membership Tenure"
+  },
+  {
+   "fieldname": "gym_charges",
+   "fieldtype": "Select",
+   "is_virtual": 1,
+   "label": "Fee Status ",
+   "options": "Paid\nNot Paid"
+  },
+  {
+   "default": "now",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Date",
+   "hide_seconds": 1,
+   "in_list_view": 1,
+   "is_virtual": 1,
+   "label": "Date of Joining",
+   "not_nullable": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "allotted_trainer",
+   "fieldtype": "Link",
+   "is_virtual": 1,
+   "label": "Allotted Trainer",
+   "options": "Gym Trainer"
+  },
+  {
+   "fieldname": "column_break_reox",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "allotted_locker_number",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Allotted Locker Number"
+  },
+  {
+   "fieldname": "trainer_rating",
+   "fieldtype": "Rating",
+   "label": "Trainer Rating"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-24 23:33:01.261071",
+ "modified": "2024-02-26 16:54:00.915421",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Member",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -34,7 +94,9 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "member_name"
 }

@@ -1,26 +1,36 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-02-24 23:34:11.497873",
+ "creation": "2024-02-26 16:52:06.404148",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "package"
+  "section_break_czee",
+  "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "package",
-   "fieldtype": "Select",
-   "label": "Package",
-   "options": "Normal Membership\nSilver Membership\nGold Membership\nPlatinum Membership\nDiamond Membership"
+   "fieldname": "section_break_czee",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Trainer Subscription",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
+ "is_submittable": 1,
  "links": [],
- "modified": "2024-02-26 13:05:55.501136",
+ "modified": "2024-02-26 16:52:06.404148",
  "modified_by": "Administrator",
  "module": "Gym Management System",
- "name": "Gym Workout Plan",
+ "name": "Gym Trainer Subscription",
  "owner": "Administrator",
  "permissions": [
   {
@@ -33,6 +43,7 @@
    "report": 1,
    "role": "System Manager",
    "share": 1,
+   "submit": 1,
    "write": 1
   }
  ],

@@ -1,24 +1,69 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:GM-Trainer-{trainer_name}",
  "creation": "2024-02-24 23:33:38.688214",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_ymut"
+  "trainer_name",
+  "experience",
+  "certification",
+  "column_break_hxqs",
+  "amended_from",
+  "contact_number"
  ],
  "fields": [
   {
-   "fieldname": "section_break_ymut",
-   "fieldtype": "Section Break"
+   "fieldname": "trainer_name",
+   "fieldtype": "Data",
+   "label": "Trainer Name"
+  },
+  {
+   "fieldname": "experience",
+   "fieldtype": "Data",
+   "label": "Experience"
+  },
+  {
+   "fieldname": "certification",
+   "fieldtype": "Attach Image",
+   "label": "Certification"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Trainer",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_hxqs",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "+91 ",
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number",
+   "options": "Phone"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-02-24 23:33:38.688214",
+ "is_submittable": 1,
+ "links": [
+  {
+   "link_doctype": "Gym Member",
+   "link_fieldname": "member_name"
+  }
+ ],
+ "modified": "2024-02-26 16:48:17.807163",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Trainer",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -32,8 +77,21 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
+   "share": 1,
+   "write": 1
   }
  ],
+ "queue_in_background": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": []
