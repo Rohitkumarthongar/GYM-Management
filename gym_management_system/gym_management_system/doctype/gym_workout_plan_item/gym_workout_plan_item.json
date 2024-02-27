@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-02-27 21:43:39.286008",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "body_part",
+  "equipment",
+  "exercise_level"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Link",
+   "label": "Title",
+   "options": "Gym Workout Plan"
+  },
+  {
+   "fetch_from": "title.body_part",
+   "fieldname": "body_part",
+   "fieldtype": "Data",
+   "label": "Body Part"
+  },
+  {
+   "fetch_from": "title.equipment",
+   "fieldname": "equipment",
+   "fieldtype": "Data",
+   "label": "Equipment"
+  },
+  {
+   "fetch_from": "title.exercise_level",
+   "fieldname": "exercise_level",
+   "fieldtype": "Data",
+   "label": "Exercise Level"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-02-27 21:57:31.156091",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Workout Plan Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

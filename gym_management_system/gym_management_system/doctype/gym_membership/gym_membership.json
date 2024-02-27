@@ -8,26 +8,29 @@
  "field_order": [
   "personal_details_tab",
   "section_break_fyey",
+  "member",
   "member_name",
   "gender",
-  "email",
   "date_of_birth",
+  "mobile_number",
+  "column_break_fvue",
+  "aadhar_number",
+  "email",
   "emergency_contact_name",
   "emergency_contact_number",
-  "column_break_ckzw",
-  "workout_plan",
-  "membership_tenure",
-  "membership_plan",
-  "contact_number",
-  "work_phone_number",
-  "base_tenure_charges",
-  "column_break_fvue",
-  "state",
+  "address_section",
   "city",
-  "zip_code",
-  "address",
-  "signature_of_member",
-  "additional_facilities_tab",
+  "column_break_suyv",
+  "state",
+  "gym_membership_details_tab",
+  "column_break_ckzw",
+  "membership_plan",
+  "time_slot",
+  "trainer",
+  "column_break_culb",
+  "membership_tenure",
+  "workout_plan",
+  "gym_services_tab",
   "section_break_wuiv",
   "body_building",
   "weight_loss",
@@ -40,11 +43,16 @@
   "cardio",
   "zoomba",
   "crossfit",
-  "amended_from",
   "section_break_rdzo",
+  "base_tenure_charges",
   "additional_charges",
   "column_break_wrgp",
-  "total_payable_amount"
+  "total_payable_amount",
+  "section_break_tpod",
+  "column_break_xraw",
+  "column_break_vrfw",
+  "signature_of_member",
+  "amended_from"
  ],
  "fields": [
   {
@@ -52,18 +60,11 @@
    "fieldtype": "Section Break"
   },
   {
+   "fetch_from": "member.full_name",
    "fieldname": "member_name",
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Member Name",
-   "options": "Name",
-   "reqd": 1
-  },
-  {
-   "fieldname": "address",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Address",
    "reqd": 1
   },
   {
@@ -85,11 +86,6 @@
    "label": "State"
   },
   {
-   "fieldname": "zip_code",
-   "fieldtype": "Data",
-   "label": "Zip Code"
-  },
-  {
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
    "in_list_view": 1,
@@ -102,11 +98,6 @@
    "label": "Gender",
    "options": "Male\nFemale\nOther",
    "reqd": 1
-  },
-  {
-   "fieldname": "work_phone_number",
-   "fieldtype": "Data",
-   "label": "Work Phone Number"
   },
   {
    "fieldname": "emergency_contact_name",
@@ -128,19 +119,6 @@
    "fieldname": "column_break_fvue",
    "fieldtype": "Column Break",
    "options": "Monthly\nQuarterly\nHalf Yearly\nYearly"
-  },
-  {
-   "fieldname": "contact_number",
-   "fieldtype": "Data",
-   "label": "Contact Number",
-   "reqd": 1,
-   "unique": 1
-  },
-  {
-   "depends_on": "eval:doc.membership_tenure==\"Quarterly\"|doc.membership_tenure==\"Half Yearly\"|doc.membership_tenure==\"Yearly\"",
-   "fieldname": "additional_facilities_tab",
-   "fieldtype": "Tab Break",
-   "label": "Additional Facilities"
   },
   {
    "default": "0",
@@ -207,26 +185,18 @@
    "label": "Crossfit"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Gym Membership",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
    "fieldname": "personal_details_tab",
    "fieldtype": "Tab Break",
    "label": "Personal Details"
   },
   {
-   "description": "Some Additional Facility Are Giving By the GYM",
+   "description": "Every Service Has Different Charge Slab, It Will Calculate As Additional Service Charge.",
    "fieldname": "section_break_wuiv",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "GYM Services"
   },
   {
+   "description": "Membership is Validate Till These Days.",
    "fieldname": "membership_plan",
    "fieldtype": "Data",
    "hide_seconds": 1,
@@ -249,7 +219,8 @@
   },
   {
    "fieldname": "section_break_rdzo",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "GYM Fee Charges"
   },
   {
    "default": "INR",
@@ -281,6 +252,85 @@
    "label": "Workout Plan",
    "options": "Beginner\nIntermediate\nAdvanced",
    "reqd": 1
+  },
+  {
+   "default": "+91 ",
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address_section",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "gym_membership_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Gym Membership Details"
+  },
+  {
+   "fieldname": "time_slot",
+   "fieldtype": "Select",
+   "label": "Time Slot",
+   "options": "05:00 AM - 06:30 AM\n06:30 AM - 08:00 AM\n08:00 AM - 09:30 AM\n09:30 AM - 11:00 AM\n11:00 AM - 12:30 PM\n12:30 PM - 02:00 PM\n02:30 PM - 04:00 PM\n06:00 PM - 08:00 PM\n08:00 PM - 10:00 PM\n10:00 PM - 11:50 PM"
+  },
+  {
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "label": "Trainer",
+   "options": "Gym Trainer"
+  },
+  {
+   "fieldname": "column_break_culb",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Ever",
+   "fieldname": "gym_services_tab",
+   "fieldtype": "Tab Break",
+   "label": "Gym Services"
+  },
+  {
+   "fieldname": "section_break_tpod",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_xraw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_vrfw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Membership",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "aadhar_number",
+   "fieldtype": "Data",
+   "label": "Aadhar Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_suyv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member",
+   "options": "User",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -291,7 +341,7 @@
    "link_fieldname": "member_name"
   }
  ],
- "modified": "2024-02-26 16:45:01.396531",
+ "modified": "2024-02-27 20:54:50.703976",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Membership",
@@ -321,6 +371,15 @@
    "role": "Gym Admin",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "report": 1,
+   "role": "Gym Member",
+   "share": 1
   }
  ],
  "show_name_in_global_search": 1,

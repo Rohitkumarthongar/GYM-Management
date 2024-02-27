@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class GymWorkoutPlanExerciseItem(Document):
+class GymDietPlanList(Document):
 	pass

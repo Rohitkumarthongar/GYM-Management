@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GM-AWP-{meber_name}",
+ "creation": "2024-02-27 10:54:15.022192",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "member_name",
+  "workout_plan_status",
+  "workout_level",
+  "column_break_qfpo",
+  "start_date",
+  "end_date",
+  "section_break_ukgs",
+  "workout_table"
+ ],
+ "fields": [
+  {
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name"
+  },
+  {
+   "fieldname": "workout_plan_status",
+   "fieldtype": "Select",
+   "label": "Workout Plan Status",
+   "options": "Active\nExpired"
+  },
+  {
+   "fieldname": "column_break_qfpo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "section_break_ukgs",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "workout_table",
+   "fieldtype": "Table",
+   "label": "Workout Table",
+   "options": "Gym Workout Plan Item"
+  },
+  {
+   "fieldname": "workout_level",
+   "fieldtype": "Link",
+   "label": "Workout Level",
+   "link_filters": "[[{\"fieldname\":\"\",\"field_option\":\"Gym Workout Plan\"},\"exercise_level\",\"like\",null]]",
+   "options": "Gym Workout Plan"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-02-27 21:53:24.720326",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Assigned Workout Plan",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

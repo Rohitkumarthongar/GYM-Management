@@ -9,9 +9,14 @@
   "trainer_name",
   "experience",
   "certification",
+  "gender",
+  "date_of_birth",
   "column_break_hxqs",
   "amended_from",
-  "contact_number"
+  "contact_number",
+  "working_status",
+  "joining_date",
+  "working_category"
  ],
  "fields": [
   {
@@ -49,6 +54,36 @@
    "fieldtype": "Data",
    "label": "Contact Number",
    "options": "Phone"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Gender",
+   "options": "Male\nFemale",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "working_status",
+   "fieldtype": "Select",
+   "label": "Working Status",
+   "options": "Working\nNot Working"
+  },
+  {
+   "fieldname": "joining_date",
+   "fieldtype": "Date",
+   "label": "Joining Date"
+  },
+  {
+   "fieldname": "working_category",
+   "fieldtype": "Select",
+   "label": "Working Category",
+   "options": "Cardio\nBody Building\nWeight Loss\nShredding\nFitness\nZoomba\nYoga"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -56,10 +91,18 @@
  "links": [
   {
    "link_doctype": "Gym Member",
+   "link_fieldname": "trainer"
+  },
+  {
+   "link_doctype": "Gym Assigned Workout Plan",
+   "link_fieldname": "member_name"
+  },
+  {
+   "link_doctype": "Gym Allotted Diet Plan",
    "link_fieldname": "member_name"
   }
  ],
- "modified": "2024-02-26 16:48:17.807163",
+ "modified": "2024-02-27 23:02:51.767335",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Trainer",

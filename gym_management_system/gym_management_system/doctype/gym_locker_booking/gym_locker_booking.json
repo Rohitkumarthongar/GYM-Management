@@ -1,26 +1,47 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-02-26 16:49:50.517806",
+ "autoname": "format:GM-LB-{locker_number}",
+ "creation": "2024-02-27 13:35:28.925068",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "total_locker"
+  "locker_number",
+  "locker_status",
+  "amended_from"
  ],
  "fields": [
   {
-   "fieldname": "total_locker",
+   "fieldname": "locker_number",
    "fieldtype": "Data",
-   "label": "Total Locker"
+   "label": "Locker No"
+  },
+  {
+   "default": "Vacant",
+   "fieldname": "locker_status",
+   "fieldtype": "Select",
+   "label": "Locker status",
+   "options": "Vacant\nOccupied"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Locker Booking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "issingle": 1,
  "links": [],
- "modified": "2024-02-26 16:50:41.682678",
+ "modified": "2024-02-27 15:09:49.761394",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Locker Booking",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -30,6 +51,16 @@
    "print": 1,
    "read": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Gym Admin",
    "share": 1,
    "write": 1
   }

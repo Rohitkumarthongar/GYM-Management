@@ -1,0 +1,133 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GM-REC-{member}",
+ "creation": "2024-02-27 10:49:28.933579",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "member",
+  "date_of_measurement",
+  "column_break_wxgt",
+  "member_name",
+  "next_measurement_date",
+  "section_break_nnpy",
+  "height",
+  "bmi",
+  "column_break_vmpz",
+  "weight",
+  "weight_scale"
+ ],
+ "fields": [
+  {
+   "fetch_from": "member.member_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name"
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "label": "Member",
+   "options": "Gym Member"
+  },
+  {
+   "fieldname": "date_of_measurement",
+   "fieldtype": "Date",
+   "label": "Date Of Measurement"
+  },
+  {
+   "fieldname": "next_measurement_date",
+   "fieldtype": "Date",
+   "label": "Next Measurement Date"
+  },
+  {
+   "fieldname": "section_break_nnpy",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Data",
+   "label": "Height (in centemeter)"
+  },
+  {
+   "fieldname": "column_break_wxgt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "bmi",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "BMI"
+  },
+  {
+   "fieldname": "column_break_vmpz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Data",
+   "label": "Weight"
+  },
+  {
+   "fieldname": "weight_scale",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Weight Scale"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Gym Member",
+   "link_fieldname": "member_name"
+  }
+ ],
+ "modified": "2024-02-27 12:28:54.589547",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Member Records",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Trainer",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

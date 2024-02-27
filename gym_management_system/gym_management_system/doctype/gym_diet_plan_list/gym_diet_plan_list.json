@@ -1,18 +1,19 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2024-02-26 12:51:50.496077",
+ "autoname": "format:{diet_plan}",
+ "creation": "2024-02-27 18:51:15.916196",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_kl9w",
-  "facility",
-  "price",
-  "amended_from"
+  "section_break_asfw",
+  "amended_from",
+  "diet_goal",
+  "diet_plan"
  ],
  "fields": [
   {
-   "fieldname": "section_break_kl9w",
+   "fieldname": "section_break_asfw",
    "fieldtype": "Section Break"
   },
   {
@@ -20,29 +21,32 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Additional Facility",
+   "options": "Gym Diet Plan List",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
-   "fieldname": "facility",
-   "fieldtype": "Data",
-   "label": "Facility"
+   "fieldname": "diet_plan",
+   "fieldtype": "Table",
+   "label": "Diet Plan",
+   "options": "Gym Diet Plan Item"
   },
   {
-   "fieldname": "price",
-   "fieldtype": "Data",
-   "label": "Price"
+   "fieldname": "diet_goal",
+   "fieldtype": "Select",
+   "label": "Diet Goal",
+   "options": "Weight Loss\nWeight Gain\nHealthy Food\nSuppliment"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-02-26 12:52:18.800047",
+ "modified": "2024-02-27 20:29:19.104964",
  "modified_by": "Administrator",
  "module": "Gym Management System",
- "name": "Additional Facility",
+ "name": "Gym Diet Plan List",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

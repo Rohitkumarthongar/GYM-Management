@@ -1,45 +1,49 @@
 {
  "actions": [],
- "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{title}",
- "creation": "2024-02-24 23:34:11.497873",
+ "autoname": "format:GM-LA-{member_name}",
+ "creation": "2024-02-27 13:25:59.965088",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "title",
-  "body_part",
-  "equipment",
-  "exercise_level"
+  "member",
+  "member_name",
+  "locker_number",
+  "locker_status"
  ],
  "fields": [
   {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "label": "Title"
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "label": "Member",
+   "options": "Gym Member"
   },
   {
-   "fieldname": "body_part",
+   "fetch_from": "member.member_name",
+   "fieldname": "member_name",
    "fieldtype": "Data",
-   "label": "Body Part"
+   "label": "Member Name"
   },
   {
-   "fieldname": "equipment",
-   "fieldtype": "Data",
-   "label": "Equipment"
+   "fieldname": "locker_number",
+   "fieldtype": "Link",
+   "label": "Locker Number",
+   "link_filters": "[[{\"fieldname\":\"locker_number\",\"field_option\":\"Gym Locker Booking\"},\"locker_status\",\"=\",\"Vacant\"]]",
+   "options": "Gym Locker Booking"
   },
   {
-   "fieldname": "exercise_level",
+   "fetch_from": "locker_number.locker_status",
+   "fieldname": "locker_status",
    "fieldtype": "Data",
-   "label": "Exercise Level"
+   "label": "Locker Status"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-27 21:49:17.195017",
+ "modified": "2024-02-27 14:00:41.811359",
  "modified_by": "Administrator",
  "module": "Gym Management System",
- "name": "Gym Workout Plan",
+ "name": "Gym Locker Allotment",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
@@ -64,18 +68,6 @@
    "read": 1,
    "report": 1,
    "role": "Gym Admin",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Gym Trainer",
    "share": 1,
    "write": 1
   }

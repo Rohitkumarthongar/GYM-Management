@@ -2,44 +2,66 @@
  "actions": [],
  "allow_import": 1,
  "allow_rename": 1,
- "autoname": "format:{title}",
- "creation": "2024-02-24 23:34:11.497873",
+ "autoname": "format:{diet_meal}",
+ "creation": "2024-02-27 13:15:44.334471",
+ "default_email_template": "Fitness-Report",
+ "default_view": "List",
  "doctype": "DocType",
+ "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "title",
-  "body_part",
-  "equipment",
-  "exercise_level"
+  "diet_meal",
+  "quantity",
+  "calories",
+  "column_break_rjyo",
+  "protein",
+  "fat",
+  "carbs"
  ],
  "fields": [
   {
-   "fieldname": "title",
-   "fieldtype": "Data",
-   "label": "Title"
+   "fieldname": "diet_meal",
+   "fieldtype": "Select",
+   "label": "Diet Meal"
   },
   {
-   "fieldname": "body_part",
+   "default": "250",
+   "description": "Quantity In Per Gram",
+   "fieldname": "quantity",
    "fieldtype": "Data",
-   "label": "Body Part"
+   "label": "Quantity"
   },
   {
-   "fieldname": "equipment",
-   "fieldtype": "Data",
-   "label": "Equipment"
+   "fieldname": "column_break_rjyo",
+   "fieldtype": "Column Break"
   },
   {
-   "fieldname": "exercise_level",
+   "fieldname": "calories",
    "fieldtype": "Data",
-   "label": "Exercise Level"
+   "label": "Calories"
+  },
+  {
+   "fieldname": "protein",
+   "fieldtype": "Data",
+   "label": "Protein"
+  },
+  {
+   "fieldname": "fat",
+   "fieldtype": "Data",
+   "label": "Fat"
+  },
+  {
+   "fieldname": "carbs",
+   "fieldtype": "Data",
+   "label": "Carbs"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-27 21:49:17.195017",
+ "modified": "2024-02-27 19:06:34.988180",
  "modified_by": "Administrator",
  "module": "Gym Management System",
- "name": "Gym Workout Plan",
+ "name": "Gym Diet Plan",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

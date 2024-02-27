@@ -7,18 +7,22 @@
  "engine": "InnoDB",
  "field_order": [
   "member_name",
-  "date_of_joining",
+  "mobile_number",
   "membership_tenure",
+  "date_of_birth",
   "column_break_reox",
+  "date_of_joining",
+  "gender",
   "gym_charges",
-  "allotted_trainer",
-  "allotted_locker_number",
-  "trainer_rating"
+  "email_id",
+  "trainer"
  ],
  "fields": [
   {
+   "fetch_from": "member.member_name",
    "fieldname": "member_name",
    "fieldtype": "Link",
+   "in_filter": 1,
    "label": "Member Name",
    "options": "Gym Membership"
   },
@@ -33,12 +37,12 @@
   {
    "fieldname": "gym_charges",
    "fieldtype": "Select",
-   "is_virtual": 1,
    "label": "Fee Status ",
-   "options": "Paid\nNot Paid"
+   "options": "Active\nNon-Active"
   },
   {
    "default": "now",
+   "fetch_from": ".date_of_birth",
    "fieldname": "date_of_joining",
    "fieldtype": "Date",
    "hide_seconds": 1,
@@ -50,31 +54,65 @@
    "set_only_once": 1
   },
   {
-   "fieldname": "allotted_trainer",
-   "fieldtype": "Link",
-   "is_virtual": 1,
-   "label": "Allotted Trainer",
-   "options": "Gym Trainer"
-  },
-  {
    "fieldname": "column_break_reox",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "allotted_locker_number",
+   "default": "+91 ",
+   "fetch_from": "member_name.mobile_number",
+   "fieldname": "mobile_number",
    "fieldtype": "Data",
-   "is_virtual": 1,
-   "label": "Allotted Locker Number"
+   "label": "Mobile Number",
+   "options": "Phone"
   },
   {
-   "fieldname": "trainer_rating",
-   "fieldtype": "Rating",
-   "label": "Trainer Rating"
+   "fetch_from": "member_name.date_of_birth",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member_name.gender",
+   "fieldname": "gender",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Gender"
+  },
+  {
+   "fetch_from": "member_name.email",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fieldname": "trainer",
+   "fieldtype": "Link",
+   "label": "Trainer",
+   "options": "Gym Trainer"
   }
  ],
  "index_web_pages_for_search": 1,
- "links": [],
- "modified": "2024-02-26 16:54:00.915421",
+ "links": [
+  {
+   "link_doctype": "Gym Member Records",
+   "link_fieldname": "member_name"
+  },
+  {
+   "link_doctype": "Gym Allotted Diet Plan",
+   "link_fieldname": "member_name"
+  },
+  {
+   "link_doctype": "Gym Assigned Workout Plan",
+   "link_fieldname": "member_name"
+  },
+  {
+   "link_doctype": "Gym Locker Allotment",
+   "link_fieldname": "member_name"
+  }
+ ],
+ "modified": "2024-02-27 23:15:58.684589",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Member",
@@ -90,6 +128,18 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
    "share": 1,
    "write": 1
   }

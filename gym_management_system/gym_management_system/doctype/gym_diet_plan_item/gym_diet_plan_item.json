@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GM-DPI-{#}",
+ "creation": "2024-02-27 10:52:46.485643",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "diet_meal",
+  "quantity",
+  "column_break_rjyo",
+  "calories",
+  "protein",
+  "fat",
+  "cabs"
+ ],
+ "fields": [
+  {
+   "fieldname": "diet_meal",
+   "fieldtype": "Link",
+   "label": "Diet Meal",
+   "options": "Gym Diet Plan"
+  },
+  {
+   "description": "Quantity In Per Gram",
+   "fieldname": "quantity",
+   "fieldtype": "Data",
+   "label": "Quantity"
+  },
+  {
+   "fieldname": "column_break_rjyo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "calories",
+   "fieldtype": "Data",
+   "label": "Calories"
+  },
+  {
+   "fetch_from": "diet_meal.protein",
+   "fieldname": "protein",
+   "fieldtype": "Data",
+   "label": "Protein"
+  },
+  {
+   "fetch_from": "diet_meal.fat",
+   "fieldname": "fat",
+   "fieldtype": "Data",
+   "label": "Fat"
+  },
+  {
+   "fetch_from": "diet_meal.carbs",
+   "fieldname": "cabs",
+   "fieldtype": "Data",
+   "label": "Cabs"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-02-27 18:54:40.963891",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Diet Plan Item",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

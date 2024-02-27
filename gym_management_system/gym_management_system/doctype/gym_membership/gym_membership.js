@@ -4,7 +4,6 @@ frappe.ui.form.on('Gym Membership', {
         calculateAndSetPayableAmount(frm);
     },
     
-    // Bind change event to checkboxes to recalculate payable amount
     membership_tenure: function(frm) {
         calculateAndSetPayableAmount(frm);
     },
@@ -49,7 +48,6 @@ function calculateAndSetPayableAmount(frm) {
     var additional_charges = 0;
     var total_payable_amount = 0;
 
-    // Define charges for each checkbox
     var checkbox_charges = {
         body_building: 1500,
         weight_loss: 800,
@@ -63,14 +61,13 @@ function calculateAndSetPayableAmount(frm) {
         crossfit: 900
     };
 
-    // Calculate additional charges based on selected checkboxes
     for (var checkbox in checkbox_charges) {
-        if (frm.doc[checkbox] === 1 || frm.doc[checkbox] === true) { // If checkbox is checked
+        if (frm.doc[checkbox] === 1 || frm.doc[checkbox] === true) { 
             additional_charges += checkbox_charges[checkbox];
         }
     }
 
-    // Calculate base tenure charges and total payable amount based on membership tenure
+  
     if (membership_tenure === 'Monthly') {
         frm.set_value('membership_plan',"30 Days")
         base_tenure_charges = 2000;
@@ -89,7 +86,6 @@ function calculateAndSetPayableAmount(frm) {
         total_payable_amount = base_tenure_charges + (additional_charges * 6);
     }
 
-    // Set values in the form
     
     frm.set_value('base_tenure_charges', base_tenure_charges);
     frm.set_value('additional_charges', additional_charges);
