@@ -1,28 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:GM-LA-{member_name}",
+ "autoname": "format:GM-LA-{member}",
  "creation": "2024-02-27 13:25:59.965088",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "member",
-  "member_name",
   "locker_number",
+  "column_break_jjvd",
+  "book_locker",
+  "section_break_zdvn",
   "locker_status"
  ],
  "fields": [
   {
    "fieldname": "member",
    "fieldtype": "Link",
-   "label": "Member",
-   "options": "Gym Member"
-  },
-  {
-   "fetch_from": "member.member_name",
-   "fieldname": "member_name",
-   "fieldtype": "Data",
-   "label": "Member Name"
+   "label": "Member Name",
+   "options": "Gym Membership"
   },
   {
    "fieldname": "locker_number",
@@ -34,13 +30,29 @@
   {
    "fetch_from": "locker_number.locker_status",
    "fieldname": "locker_status",
-   "fieldtype": "Data",
-   "label": "Locker Status"
+   "fieldtype": "Select",
+   "is_virtual": 1,
+   "label": "Locker Status",
+   "options": "Vacant\nOccupied"
+  },
+  {
+   "fieldname": "section_break_zdvn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_jjvd",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "book_locker",
+   "fieldtype": "Check",
+   "label": "Book Locker"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-27 14:00:41.811359",
+ "modified": "2024-02-29 23:34:45.049932",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Locker Allotment",

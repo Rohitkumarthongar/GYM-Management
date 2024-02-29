@@ -1,11 +1,12 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:GM-{member_name}",
+ "autoname": "format:GM-{member}",
  "creation": "2024-02-24 23:33:01.261071",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "member",
   "member_name",
   "mobile_number",
   "membership_tenure",
@@ -19,15 +20,7 @@
  ],
  "fields": [
   {
-   "fetch_from": "member.member_name",
-   "fieldname": "member_name",
-   "fieldtype": "Link",
-   "in_filter": 1,
-   "label": "Member Name",
-   "options": "Gym Membership"
-  },
-  {
-   "fetch_from": "member_name.membership_plan",
+   "fetch_from": "member.membership_tenure",
    "fieldname": "membership_tenure",
    "fieldtype": "Data",
    "hide_seconds": 1,
@@ -38,11 +31,11 @@
    "fieldname": "gym_charges",
    "fieldtype": "Select",
    "label": "Fee Status ",
-   "options": "Active\nNon-Active"
+   "options": "Active\nExpired\nPending"
   },
   {
    "default": "now",
-   "fetch_from": ".date_of_birth",
+   "fetch_from": ".diet_chart",
    "fieldname": "date_of_joining",
    "fieldtype": "Date",
    "hide_seconds": 1,
@@ -59,60 +52,76 @@
   },
   {
    "default": "+91 ",
-   "fetch_from": "member_name.mobile_number",
+   "fetch_from": "member.mobile_number",
    "fieldname": "mobile_number",
    "fieldtype": "Data",
    "label": "Mobile Number",
    "options": "Phone"
   },
   {
-   "fetch_from": "member_name.date_of_birth",
+   "fetch_from": "member.date_of_birth",
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
    "label": "Date Of Birth",
    "reqd": 1
   },
   {
-   "fetch_from": "member_name.gender",
+   "fetch_from": "member.gender",
    "fieldname": "gender",
    "fieldtype": "Data",
    "is_virtual": 1,
    "label": "Gender"
   },
   {
-   "fetch_from": "member_name.email",
+   "fetch_from": "member.email",
    "fieldname": "email_id",
    "fieldtype": "Data",
    "label": "Email ID",
    "options": "Email"
   },
   {
+   "fetch_from": "member.trainer",
    "fieldname": "trainer",
    "fieldtype": "Link",
    "label": "Trainer",
    "options": "Gym Trainer"
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "is_virtual": 1,
+   "label": "Member",
+   "options": "Gym Membership"
+  },
+  {
+   "fetch_from": "member.member_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name",
+   "options": "Gym Membership"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [
   {
    "link_doctype": "Gym Member Records",
-   "link_fieldname": "member_name"
+   "link_fieldname": "member"
   },
   {
    "link_doctype": "Gym Allotted Diet Plan",
-   "link_fieldname": "member_name"
+   "link_fieldname": "member"
   },
   {
    "link_doctype": "Gym Assigned Workout Plan",
-   "link_fieldname": "member_name"
+   "link_fieldname": "member"
   },
   {
    "link_doctype": "Gym Locker Allotment",
-   "link_fieldname": "member_name"
+   "link_fieldname": "member"
   }
  ],
- "modified": "2024-02-27 23:15:58.684589",
+ "modified": "2024-02-29 23:42:30.011545",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Member",
@@ -148,5 +157,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "member_name"
+ "title_field": "member"
 }

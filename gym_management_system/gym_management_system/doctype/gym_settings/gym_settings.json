@@ -5,18 +5,67 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_eagk"
+  "fixed_cost_section",
+  "equipment_cost",
+  "gym_running_cost_section",
+  "trainer_cost",
+  "extra_cost",
+  "column_break_orpe",
+  "building_rent",
+  "electricity_bill",
+  "water_bill"
  ],
  "fields": [
   {
-   "fieldname": "section_break_eagk",
-   "fieldtype": "Section Break"
+   "fieldname": "gym_running_cost_section",
+   "fieldtype": "Section Break",
+   "label": "Gym Running Cost"
+  },
+  {
+   "description": "For Single Trainer",
+   "fieldname": "trainer_cost",
+   "fieldtype": "Data",
+   "label": "Trainer Cost"
+  },
+  {
+   "fieldname": "equipment_cost",
+   "fieldtype": "Data",
+   "label": "Equipment Cost"
+  },
+  {
+   "fieldname": "building_rent",
+   "fieldtype": "Data",
+   "label": "Building Rent"
+  },
+  {
+   "fieldname": "electricity_bill",
+   "fieldtype": "Data",
+   "label": "Electricity Bill"
+  },
+  {
+   "fieldname": "water_bill",
+   "fieldtype": "Data",
+   "label": "Water Bill"
+  },
+  {
+   "fieldname": "extra_cost",
+   "fieldtype": "Data",
+   "label": "Extra Cost"
+  },
+  {
+   "fieldname": "column_break_orpe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fixed_cost_section",
+   "fieldtype": "Section Break",
+   "label": "Fixed Cost"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2024-02-24 23:40:51.240957",
+ "modified": "2024-02-29 13:36:30.855397",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Settings",

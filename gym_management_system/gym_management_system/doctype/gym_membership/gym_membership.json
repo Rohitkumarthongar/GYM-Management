@@ -1,5 +1,8 @@
 {
  "actions": [],
+ "allow_auto_repeat": 1,
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
  "autoname": "format:GM-{MM}-{YYYY}-{member_name}",
  "creation": "2024-02-24 23:33:20.422270",
  "doctype": "DocType",
@@ -8,7 +11,6 @@
  "field_order": [
   "personal_details_tab",
   "section_break_fyey",
-  "member",
   "member_name",
   "gender",
   "date_of_birth",
@@ -201,8 +203,7 @@
    "fieldtype": "Data",
    "hide_seconds": 1,
    "is_virtual": 1,
-   "label": "Membership Plan",
-   "reqd": 1
+   "label": "Membership Plan"
   },
   {
    "fieldname": "signature_of_member",
@@ -323,14 +324,6 @@
   {
    "fieldname": "column_break_suyv",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "member",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Member",
-   "options": "User",
-   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
@@ -338,10 +331,10 @@
  "links": [
   {
    "link_doctype": "Gym Member",
-   "link_fieldname": "member_name"
+   "link_fieldname": "member"
   }
  ],
- "modified": "2024-02-27 20:54:50.703976",
+ "modified": "2024-02-29 22:34:18.008943",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Membership",
@@ -387,5 +380,6 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "member_name"
+ "title_field": "member_name",
+ "translated_doctype": 1
 }

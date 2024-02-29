@@ -6,6 +6,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "member",
   "member_name",
   "diet_goal",
   "trainer",
@@ -18,6 +19,7 @@
  ],
  "fields": [
   {
+   "fetch_from": "member.member_name",
    "fieldname": "member_name",
    "fieldtype": "Data",
    "label": "Member Name"
@@ -63,11 +65,17 @@
    "fieldtype": "Table",
    "label": "Diet Plan",
    "options": "Gym Diet Plan Item"
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "label": "Member",
+   "options": "Gym Member"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-02-27 18:51:58.942920",
+ "modified": "2024-02-29 21:45:35.430890",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Allotted Diet Plan",
@@ -83,6 +91,30 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
    "share": 1,
    "write": 1
   }

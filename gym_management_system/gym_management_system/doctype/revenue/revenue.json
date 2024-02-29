@@ -1,0 +1,152 @@
+{
+ "actions": [],
+ "creation": "2024-02-29 15:20:28.323467",
+ "default_view": "List",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "fixed_cost_section",
+  "equipment_cost",
+  "gym_running_cost_section",
+  "trainer_cost",
+  "building_rent",
+  "extra_cost",
+  "column_break_orpe",
+  "no_of_trainers",
+  "electricity_bill",
+  "water_bill",
+  "section_break_dkzn",
+  "total_expenses",
+  "column_break_wheq",
+  "total_number_of_members",
+  "total_revenue",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "fixed_cost_section",
+   "fieldtype": "Section Break",
+   "label": "Fixed Cost"
+  },
+  {
+   "fieldname": "equipment_cost",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Equipment Cost"
+  },
+  {
+   "fieldname": "gym_running_cost_section",
+   "fieldtype": "Section Break",
+   "label": "Gym Running Cost"
+  },
+  {
+   "description": "For Single Trainer",
+   "fieldname": "trainer_cost",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Trainer Cost"
+  },
+  {
+   "fieldname": "building_rent",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Building Rent"
+  },
+  {
+   "fieldname": "extra_cost",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Extra Cost"
+  },
+  {
+   "fieldname": "column_break_orpe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "no_of_trainers",
+   "fieldtype": "Data",
+   "label": "No Of Trainers"
+  },
+  {
+   "fieldname": "electricity_bill",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Electricity Bill"
+  },
+  {
+   "fieldname": "water_bill",
+   "fieldtype": "Data",
+   "is_virtual": 1,
+   "label": "Water Bill"
+  },
+  {
+   "fieldname": "section_break_dkzn",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_expenses",
+   "fieldtype": "Data",
+   "label": "Total Expenses"
+  },
+  {
+   "fieldname": "column_break_wheq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_number_of_members",
+   "fieldtype": "Data",
+   "label": "Total Number Of Members"
+  },
+  {
+   "fieldname": "total_revenue",
+   "fieldtype": "Data",
+   "label": "Total Revenue"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Revenue",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-02-29 15:20:28.323467",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Revenue",
+ "naming_rule": "By script",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

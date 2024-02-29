@@ -1,6 +1,5 @@
 frappe.ui.form.on('Gym Membership', {
     onload: function(frm) {
-        console.log("Membership Tenure:", frm.doc.membership_tenure);
         calculateAndSetPayableAmount(frm);
     },
     
@@ -39,6 +38,24 @@ frappe.ui.form.on('Gym Membership', {
     },
     crossfit: function(frm) {
         calculateAndSetPayableAmount(frm);
+    
+    // email: function(frm) {
+    //     var email = frm.doc.email_address;
+
+    //     // Make a server-side call to check if the email exists
+    //     frappe.call({
+    //         method: 'gym_management_system.gym_management_system.doctype.gym_membership.check_email_exists',
+    //         args: {
+    //             email: email
+    //         },
+    //         callback: function(response) {
+    //             if (response.message) {
+    //                 // Email exists
+    //                 validate = false
+    //                 frappe.msgprint('This email address is already registered.');
+    //             }
+    //         }
+    //     });
     }
 });
 
@@ -67,26 +84,24 @@ function calculateAndSetPayableAmount(frm) {
         }
     }
 
-  
     if (membership_tenure === 'Monthly') {
-        frm.set_value('membership_plan',"30 Days")
+        frm.set_value('membership_plan', "30 Days");
         base_tenure_charges = 2000;
         total_payable_amount = base_tenure_charges + additional_charges;
     } else if (membership_tenure === 'Yearly') {
+        frm.set_value('membership_plan', "365 Days");
         base_tenure_charges = 20000;
-        frm.set_value('membership_plan',"365 Days")
-        total_payable_amount = base_tenure_charges+ (additional_charges * 12);
+        total_payable_amount = base_tenure_charges + (additional_charges * 12);
     } else if (membership_tenure === 'Quarterly') {
+        frm.set_value('membership_plan', "120 Days");
         base_tenure_charges = 7500;
-        frm.set_value('membership_plan',"120 Days")
         total_payable_amount = base_tenure_charges + (additional_charges * 4);
     } else if (membership_tenure === 'Half Yearly') {
-        frm.set_value('membership_plan',"180 Days")
+        frm.set_value('membership_plan', "180 Days");
         base_tenure_charges = 11000;
         total_payable_amount = base_tenure_charges + (additional_charges * 6);
     }
 
-    
     frm.set_value('base_tenure_charges', base_tenure_charges);
     frm.set_value('additional_charges', additional_charges);
     frm.set_value('total_payable_amount', total_payable_amount);
