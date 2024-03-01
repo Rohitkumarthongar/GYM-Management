@@ -38,6 +38,7 @@ def create_user():
     user.first_name = first_name
     user.last_name = last_name[0] if last_name else ""
     user.gender = data.get("gender")
+    user.role_profile_name = "Gym Member"
     user.mobile_no = data.get("mobile_number")
     user.birth_date = birth_date
     user.update(data)  
