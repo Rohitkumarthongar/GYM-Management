@@ -2,7 +2,8 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:GM-{member}",
- "creation": "2024-02-24 23:33:01.261071",
+ "creation": "2024-03-01 08:38:54.752254",
+ "default_view": "List",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -20,6 +21,28 @@
  ],
  "fields": [
   {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "is_virtual": 1,
+   "label": "Member",
+   "options": "Gym Membership"
+  },
+  {
+   "fetch_from": "member.member_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name"
+  },
+  {
+   "default": "+91 ",
+   "fetch_from": "member.mobile_number",
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "options": "Phone"
+  },
+  {
    "fetch_from": "member.membership_tenure",
    "fieldname": "membership_tenure",
    "fieldtype": "Data",
@@ -28,10 +51,14 @@
    "label": "Membership Tenure"
   },
   {
-   "fieldname": "gym_charges",
-   "fieldtype": "Select",
-   "label": "Fee Status ",
-   "options": "Active\nExpired\nPending"
+   "fetch_from": "member.date_of_birth",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date Of Birth"
+  },
+  {
+   "fieldname": "column_break_reox",
+   "fieldtype": "Column Break"
   },
   {
    "default": "now",
@@ -47,30 +74,17 @@
    "set_only_once": 1
   },
   {
-   "fieldname": "column_break_reox",
-   "fieldtype": "Column Break"
-  },
-  {
-   "default": "+91 ",
-   "fetch_from": "member.mobile_number",
-   "fieldname": "mobile_number",
-   "fieldtype": "Data",
-   "label": "Mobile Number",
-   "options": "Phone"
-  },
-  {
-   "fetch_from": "member.date_of_birth",
-   "fieldname": "date_of_birth",
-   "fieldtype": "Date",
-   "label": "Date Of Birth",
-   "reqd": 1
-  },
-  {
    "fetch_from": "member.gender",
    "fieldname": "gender",
    "fieldtype": "Data",
    "is_virtual": 1,
    "label": "Gender"
+  },
+  {
+   "fieldname": "gym_charges",
+   "fieldtype": "Select",
+   "label": "Fee Status ",
+   "options": "Active\nExpired\nPending"
   },
   {
    "fetch_from": "member.email",
@@ -85,21 +99,6 @@
    "fieldtype": "Link",
    "label": "Trainer",
    "options": "Gym Trainer"
-  },
-  {
-   "fieldname": "member",
-   "fieldtype": "Link",
-   "hidden": 1,
-   "is_virtual": 1,
-   "label": "Member",
-   "options": "Gym Membership"
-  },
-  {
-   "fetch_from": "member.member_name",
-   "fieldname": "member_name",
-   "fieldtype": "Data",
-   "label": "Member Name",
-   "options": "Gym Membership"
   }
  ],
  "index_web_pages_for_search": 1,
@@ -121,7 +120,7 @@
    "link_fieldname": "member"
   }
  ],
- "modified": "2024-02-29 23:42:30.011545",
+ "modified": "2024-03-01 15:33:07.806769",
  "modified_by": "Administrator",
  "module": "Gym Management System",
  "name": "Gym Member",
