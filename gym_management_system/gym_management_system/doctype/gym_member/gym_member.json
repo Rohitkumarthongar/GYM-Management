@@ -1,0 +1,140 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:GM-{member_name}",
+ "creation": "2024-03-01 18:26:41.529657",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "member",
+  "email_id",
+  "mobile_number",
+  "date_of_birth",
+  "gender",
+  "column_break_drbj",
+  "membership_tenure",
+  "fee_status",
+  "date_of_joining",
+  "exp_membership",
+  "trainer"
+ ],
+ "fields": [
+  {
+   "fetch_from": "member.mobile_number",
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fetch_from": "member.membership_tenure",
+   "fieldname": "membership_tenure",
+   "fieldtype": "Data",
+   "label": "Membership Tenure"
+  },
+  {
+   "fetch_from": "member.date_of_birth",
+   "fieldname": "date_of_birth",
+   "fieldtype": "Data",
+   "label": "Date of Birth"
+  },
+  {
+   "default": "now",
+   "fetch_from": ".diet_chart",
+   "fieldname": "date_of_joining",
+   "fieldtype": "Data",
+   "label": "Date of Joining"
+  },
+  {
+   "fetch_from": "member.gender",
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender"
+  },
+  {
+   "fetch_from": ".suppliments",
+   "fieldname": "fee_status",
+   "fieldtype": "Select",
+   "label": "Fee Status",
+   "options": "Active\nPending\nExpired"
+  },
+  {
+   "fetch_from": "member.email",
+   "fieldname": "email_id",
+   "fieldtype": "Data",
+   "label": "Email ID",
+   "options": "Email"
+  },
+  {
+   "fetch_from": "member.trainer",
+   "fieldname": "trainer",
+   "fieldtype": "Data",
+   "label": "Trainer"
+  },
+  {
+   "fieldname": "column_break_drbj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "exp_membership",
+   "fieldtype": "Date",
+   "label": "Exp Membership"
+  },
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "label": "Member Name",
+   "link_filters": "[]",
+   "options": "Gym Membership"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [
+  {
+   "link_doctype": "Gym Locker Allotment",
+   "link_fieldname": "member"
+  },
+  {
+   "link_doctype": "Gym Allotted Diet Plan",
+   "link_fieldname": "member"
+  },
+  {
+   "link_doctype": "Gym Assigned Workout Plan",
+   "link_fieldname": "member"
+  }
+ ],
+ "modified": "2024-03-01 18:53:02.033579",
+ "modified_by": "Administrator",
+ "module": "Gym Management System",
+ "name": "Gym Member",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
